@@ -1,0 +1,12 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #04050a;
+  color: #e9ecf2;
+  font-family: system-ui, -apple-system, sans-serif;
+}
