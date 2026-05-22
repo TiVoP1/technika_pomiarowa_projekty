@@ -3,6 +3,7 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import { HomePage } from "@/pages/HomePage";
 import { ProjectIIIPage } from "@/projects/project-iii/ProjectIIIPage";
 import { ProjectVIPage } from "@/projects/project-vi/ProjectVIPage";
+import { ProjectVIIPage } from "@/projects/project-vii/ProjectVIIPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 
 export const router = createBrowserRouter([
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "projekt-iii", element: <ProjectIIIPage /> },
       { path: "projekt-vi", element: <ProjectVIPage /> },
+      { path: "projekt-vii", element: <ProjectVIIPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

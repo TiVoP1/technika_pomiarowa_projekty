@@ -229,6 +229,52 @@ export function ProjectVIIPage() {
             />
           </Card>
 
+          <Card title="Wyzwalanie" eyebrow="Trigger">
+            <div className="space-y-3">
+              <SelectField
+                label="Źródło"
+                value={trigger.source}
+                options={[
+                  { value: "A", label: "Kanał A" },
+                  { value: "B", label: "Kanał B" },
+                ]}
+                onValueChange={(v) => {
+                  setTrigger((t) => ({ ...t, source: v }));
+                }}
+              />
+              <NumberField
+                label="Poziom"
+                value={trigger.level}
+                unit="V"
+                step={0.05}
+                onValueChange={(level) => {
+                  setTrigger((t) => ({ ...t, level }));
+                }}
+              />
+              <SelectField
+                label="Zbocze"
+                value={trigger.slope}
+                options={[
+                  { value: "rising", label: "Narastające ↗" },
+                  { value: "falling", label: "Opadające ↘" },
+                ]}
+                onValueChange={(v: TriggerSlope) => {
+                  setTrigger((t) => ({ ...t, slope: v }));
+                }}
+              />
+              <label className="flex cursor-pointer items-center gap-2 text-sm text-ink-200">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 rounded border-white/20 bg-ink-900 text-accent focus-ring"
+                  checked={trigger.auto}
+                  onChange={(e) => {
+                    setTrigger((t) => ({ ...t, auto: e.target.checked }));
+                  }}
+                />
+                Tryb auto (rysuj nawet bez wyzwolenia)
+              </label>
+            </div>
+          </Card>
         </div>
       </div>
     </div>
