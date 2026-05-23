@@ -265,6 +265,42 @@ export function ProjectVIIIPage() {
             </div>
           </Card>
 
+          <Card title="Skąd te wzory" eyebrow="Wyjaśnienie">
+            <Prose>
+              <p>
+                Dokładność multimetru cyfrowego producent zapisuje zwykle jako
+                <code> ± (a % odczytu + b digits) </code> albo
+                <code> ± (a % odczytu + c % zakresu) </code>. Pierwszy
+                składnik rośnie razem z odczytem, drugi jest stały dla danego
+                zakresu. Dlatego pomiary blisko zakresu są lepsze niż na samym
+                dole zakresu. Stąd zasada żeby ustawiać najmniejszy zakres
+                jaki nie spowoduje przepełnienia.
+              </p>
+              <p>
+                Składnik <strong>digits</strong> to po prostu kilka jednostek
+                najmłodszej wyświetlanej cyfry. Jeśli przyrząd ma rozdzielczość
+                jednego mikrowolta a producent podaje plus pięć cyfr, to wkład
+                z tej składowej wynosi pięć mikrowoltów niezależnie od tego co
+                pokazuje wyświetlacz.
+              </p>
+              <h3>Od błędu granicznego do niepewności</h3>
+              <p>
+                Norma GUM przyjmuje że jeżeli wiemy tylko że wartość mieści się
+                w przedziale ±Δ to rozkład najlepiej opisać jako prostokątny.
+                Wówczas niepewność standardowa wynosi
+                <code> u = Δ / √3 </code>. Rozszerzona niepewność z
+                współczynnikiem rozszerzenia k = 2 daje przedział o poziomie
+                ufności około 95 procent.
+              </p>
+              <h3>Po co to wszystko</h3>
+              <p>
+                Bez błędu pomiar to tylko liczba bez kontekstu. Z błędem
+                można sensownie porównywać wyniki, sprawdzać czy mieszczą się
+                w specyfikacji wyrobu i decydować czy dwa pomiary różnią się
+                istotnie czy nie. To podstawa pracy w laboratorium pomiarowym.
+              </p>
+            </Prose>
+          </Card>
         </div>
       </div>
     </div>
