@@ -7,6 +7,10 @@ export interface StatProps {
   unit?: ReactNode;
   hint?: ReactNode;
   emphasis?: "neutral" | "accent" | "ok" | "warn" | "err";
+  /** When true, reserve a fixed line of vertical space for the hint even
+   *  if no hint is provided. Default true this stops layout jitter when
+   *  values toggle between "has hint" and "no hint" between frames. */
+  reserveHint?: boolean;
   className?: string;
 }
 
@@ -24,27 +28,39 @@ export function Stat({
   unit,
   hint,
   emphasis = "neutral",
+  reserveHint = true,
   className,
 }: StatProps) {
   return (
     <div
       className={cn(
-        "rounded-xl border border-white/5 bg-ink-900/40 p-4 transition-colors hover:border-white/10",
+        "flex flex-col rounded-xl border border-white/5 bg-ink-900/40 p-4 transition-colors hover:border-white/10",
         className,
       )}
     >
       <div className="eyebrow">{label}</div>
       <div className="mt-1 flex items-baseline gap-1">
-        <span className={cn("font-mono text-2xl tracking-tight", emphasisMap[emphasis])}>
+        <span
+          className={cn(
+            "truncate font-mono text-2xl tracking-tight tabular-nums",
+            emphasisMap[emphasis],
+          )}
+        >
           {value}
         </span>
         {unit !== undefined && (
           <span className="text-xs text-ink-400">{unit}</span>
         )}
       </div>
-      {hint !== undefined && (
-        <p className="mt-1 text-xs text-ink-400 leading-relaxed">{hint}</p>
-      )}
+      {hint !== undefined ? (
+        <p className="mt-1 min-h-[1rem] text-xs leading-tight text-ink-400">
+          {hint}
+        </p>
+      ) : reserveHint ? (
+        <p className="mt-1 min-h-[1rem] text-xs leading-tight" aria-hidden>
+          {" "}
+        </p>
+      ) : null}
     </div>
   );
 }
