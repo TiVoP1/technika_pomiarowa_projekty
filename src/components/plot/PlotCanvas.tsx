@@ -29,7 +29,7 @@ export function PlotCanvas({
         ref={canvasRef}
         role="img"
         aria-label={ariaLabel ?? "Wykres"}
-        className="block h-full w-full"
+        className="absolute inset-0 block h-full w-full"
       />
     </div>
   );
