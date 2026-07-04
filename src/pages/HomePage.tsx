@@ -12,6 +12,19 @@ interface ProjectCard {
 
 const PROJECTS: readonly ProjectCard[] = [
   {
+    to: "/projekt-ii",
+    numeral: "II",
+    title: "Wartość skuteczna sygnałów",
+    tag: "RMS, składowa stała",
+    summary:
+      "Obliczenia wartości skutecznej dla sinusoidy, piły, trójkąta, prostokąta i impulsu o dowolnym wypełnieniu. Wyprowadzenia krok po kroku oraz porównanie z miernikiem uśredniającym.",
+    highlights: [
+      "Wyprowadzenia analityczne",
+      "Weryfikacja numeryczna",
+      "True RMS vs prostownik",
+    ],
+  },
+  {
     to: "/projekt-iii",
     numeral: "III",
     title: "Schematy zastępcze elementów biernych",

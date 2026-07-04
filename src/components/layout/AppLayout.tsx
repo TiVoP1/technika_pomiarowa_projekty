@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import { cn } from "@/lib/cn";
 
 const NAV: readonly { to: string; label: string; short: string }[] = [
+  { to: "/projekt-ii", label: "Wartość skuteczna", short: "II" },
   { to: "/projekt-iii", label: "Schematy zastępcze", short: "III" },
   { to: "/projekt-vi", label: "Symulator A/C", short: "VI" },
   { to: "/projekt-vii", label: "Oscyloskop", short: "VII" },

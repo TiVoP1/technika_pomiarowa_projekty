@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { HomePage } from "@/pages/HomePage";
+import { ProjectIIPage } from "@/projects/project-ii/ProjectIIPage";
 import { ProjectIIIPage } from "@/projects/project-iii/ProjectIIIPage";
 import { ProjectVIPage } from "@/projects/project-vi/ProjectVIPage";
 import { ProjectVIIPage } from "@/projects/project-vii/ProjectVIIPage";
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: "projekt-ii", element: <ProjectIIPage /> },
       { path: "projekt-iii", element: <ProjectIIIPage /> },
       { path: "projekt-vi", element: <ProjectVIPage /> },
       { path: "projekt-vii", element: <ProjectVIIPage /> },
